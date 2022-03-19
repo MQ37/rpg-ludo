@@ -1,4 +1,7 @@
 test:
 	python3 tests/tests.py
 
-.PHONY: test
+run:
+	python3 main.py
+
+.PHONY: test run
