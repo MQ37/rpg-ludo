@@ -12,3 +12,5 @@ School project
   - `docker build -t mq37/rpg-ludo .`
 - **Run the image**
   - `docker run -it --name ludo mq37/rpg-ludo`
+- **Docker hub**
+  - https://hub.docker.com/r/mq37/rpg-ludo
