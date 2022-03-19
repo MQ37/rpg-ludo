@@ -9,6 +9,6 @@ School project
 
 ### How to docker
 - **Build image**
-  - `docker build . -t ludo`
+  - `docker build -t mq37/rpg-ludo .`
 - **Run the image**
-  - `docker run -it --name ludo ludo`
+  - `docker run -it --name ludo mq37/rpg-ludo`
