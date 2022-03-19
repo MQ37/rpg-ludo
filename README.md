@@ -6,3 +6,9 @@ School project
 
 ### How to test
 - `make test` or `python3 tests/tests.py`
+
+### How to docker
+- **Build image**
+  - `docker build . -t ludo`
+- **Run the image**
+  - `docker run -it --name ludo ludo`
