@@ -1,0 +1,60 @@
+## RPG - člověče nezlob se
+Cílem - aplikovat ADT (fronta), řadící algoritmus, OOP
+
+1) Vytvoříte objektový model
+
+ - herní pole, figurka, domeček (start, cíl), kostka
+
+2) Figurky mají prioritu
+
+ - všechny začínají s prioritou 1 a můžou získat prioritu vyšší, pak jsou dříve na tahu
+ - figurky mají schopnosti (kouzlit, útočit) a mají atributy (HP, MANA, povolání, ATK, DEF, ...)
+ - některá políčka mají speciální schopnosti (doplnit zdraví, manu, atd.)
+
+#### GUI
+ - ncurses / curses jako GUI (TUI)
+
+#### Návrh
+ - Hráč
+   - startovní domeček
+   - cílový domeček
+   - seznam figurek
+   - Figurka
+      - HP
+      - Mana
+      - povolání - speciální vlastnost figurky, třeba bude skokan - bude třeba double multiplier počtu skoků
+      - schopnost - pokud stoupne na políčko s jinou figurkou aplikuje schopnost (někdy na figurky z vlastního teamu - heal nebo na nepřátelské figurky - třeba kill, vrácení do domečku)
+   - Domeček
+      - seznam figurek
+      - vyhožení a přidání figurek
+ - Hra
+    - seznam hráčů
+    - seznam políček
+    - Kostka
+       - generuje počet tahů (číslo)
+    - Políčko
+       - je nutné identifikovat startovní pole (přiřadit domečku)
+       - akce - speciální akce aplikovaná na figurku, která na pole stoupne (třeba zvedne nebo sníží prioritu)
+
+
+#### Flow
+ - všechny figurky jsou ve startovním domečku, hráčí házejí kostkou dokud nepadne 6 (když nemají žádnou figurku na herním poli, můžou házet až 3x), když padne tak se vyhodí figurka z domečku na startovní pole
+ - vybere se první hráč na řadě a hodí se kostkou, pokud se hodi 6 a ve startovní domečku jsou figurky a zároveň je startovní políčko hráče volné, vyhodí se figurka z domečku, jinak se vybere první figurka hráče podle pritority a posune se o X kroků
+ -  do cílového domečku může figurka vstoupit pouze pokud hodí přesný počet kroků na volné místo v domečku, jinak čeká (zvýšíme prioritu čekající figurce) a pokud čeká a je na herním poli jiná figurka, kterou lze posunout, tak se posune
+
+#### Relations
+```
+      Hra
+  ->     ->
+ Hráč    Pole
+  <->     ->
+     Figurka
+```
+
+
+```
+        Hra
+    ->   -     ->
+  Hráč   ->     Pole
+     <- figurka <-
+```
