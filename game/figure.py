@@ -8,7 +8,7 @@ class Figure():
         self.f_id = f_id
 
     def __str__(self):
-        return "Figure %s of player %s at field %s" % (self.f_id, self.owner, self.field)
+        return "Figure %s of player %s" % (self.f_id, self.owner)
 
     def __repr__(self):
         return str(self)
