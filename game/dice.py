@@ -7,4 +7,6 @@ class Dice():
         self.sides = sides
 
     def roll(self):
-        return random.randint(1, self.sides)
+        val = random.randint(1, self.sides)
+        print("Rolling dice - %s" % val)
+        return val
