@@ -18,6 +18,9 @@ class Home():
             return True
         return False
 
+    def is_slot_empty(self, slot):
+        return self.figures[slot] is None
+
     def add_figure(self, figure, slot):
         if self.is_full():
             return False
@@ -32,6 +35,9 @@ class Home():
 
     def get_figures(self):
         return self.figures
+
+    def get_size(self):
+        return self.num_figures
 
     def print_figures(self):
         print("Home of player %s" % self.owner)
