@@ -6,7 +6,7 @@ class Field():
         self.f_id = f_id
 
     def __str__(self):
-        return str(self.f_id)
+        return "Field %s containing %s" % (self.f_id, self.figure)
 
     def __repr__(self):
         return str(self)
