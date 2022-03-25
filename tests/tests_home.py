@@ -1,7 +1,7 @@
 from context import game
 
 def test_home_add_remove_figure():
-    p = game.Player("Tonda", None, None)
+    p = game.Player("Tonda", None, None, None)
     h = game.Home(p, num_figures=4)
     f = game.Figure(p, 1)
 

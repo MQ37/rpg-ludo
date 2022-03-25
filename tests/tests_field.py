@@ -1,7 +1,7 @@
 from context import game
 
 def test_set_figure_non_empty():
-    p = game.Player("Tonda", None, None)
+    p = game.Player("Tonda", None, None, None)
     figure = game.Figure(p, 1)
     another_figure = game.Figure(p, 2)
     field = game.Field(1)

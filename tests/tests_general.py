@@ -1,7 +1,7 @@
 from context import game
 
 def test_figure_set_field_field_set_figure():
-    p = game.Player("Tonda", None, None)
+    p = game.Player("Tonda", None, None, None)
 
     figure = game.Figure(p, 1)
     field = game.Field(1)
@@ -29,7 +29,7 @@ def test_figure_set_field_field_set_figure():
     assert field.get_figure() is figure
 
 def test_figure_remove_field_field_remove_figure():
-    p = game.Player("Tonda", None, None)
+    p = game.Player("Tonda", None, None, None)
 
     figure = game.Figure(p, 1)
     field = game.Field(1)
