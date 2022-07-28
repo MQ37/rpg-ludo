@@ -1,5 +1,5 @@
 # rpg-ludo
-School project
+School project (WIP / unfinished)
 
 ### How to run
 - `make run` or `python3 main.py`
